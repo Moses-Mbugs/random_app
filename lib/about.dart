@@ -82,3 +82,13 @@ class AboutPage extends StatelessWidget {
             //     child: Icon(Icons.info, color: Colors.white),
             //   ),
             // ),
+
+// const Text(
+//                     "Close",
+//                     style: TextStyle(
+//                       fontFamily: 'PressStart2P',
+//                       fontSize: 14,
+//                       color: Colors.black
+//                     ),
+//                   );
+//                   const Icon(Icons.close);  

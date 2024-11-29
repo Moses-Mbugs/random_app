@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'random_fact_dialog.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -77,32 +79,56 @@ class _HomePageState extends State<HomePage> {
             Positioned(
               top: 50,
               right: 20,
-              child: FloatingActionButton(
-                onPressed: () {
-                  Navigator.of(context).pop(); // Closes the app
-                },
-                backgroundColor: Colors.black,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  padding: const EdgeInsets.symmetric(vertical: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.red.shade900,
+              child: SizedBox(
+                width: 115, // Custom width
+                height: 60, // Custom height
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  },
+                  backgroundColor: Colors.transparent, // Transparent to show the custom container
+                  elevation: 0, // Remove shadow from FloatingActionButton itself
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10), // Adjust padding if needed
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade700,
+                      borderRadius: BorderRadius.circular(2),
+                      border: Border.all(color: Colors.black, width: 3),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.9),
+                          offset: const Offset(8, 8),
+                          blurRadius: 0.1,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, 
+                      children: [
+                        Icon(
+                          Icons.close_rounded,
+                          color: Colors.black,
+                          
+                        ),
 
-                  // border radius
-                  borderRadius:
-                      BorderRadius.circular(2), 
-                  border: Border.all(color: Colors.black, width: 3), 
+                        const SizedBox(width: 8), // Space between icon and text
 
-                    // shadow
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.9), 
-                        offset: const Offset(8, 8),
-                        blurRadius: 0.1,
-                      ),
-                    ]
-                )
-                )
+                        Text(
+                          'Close', 
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'PressStart2p',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
 
@@ -110,35 +136,58 @@ class _HomePageState extends State<HomePage> {
             Positioned(
               top: 50,
               left: 30,
-              child: FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
-                },
-                backgroundColor: Colors.black,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  padding: const EdgeInsets.symmetric(vertical: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.yellowAccent,
-                  // border radius
-                  borderRadius:
-                      BorderRadius.circular(2), 
-                  border: Border.all(color: Colors.black, width: 3), 
-                    // shadow
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.9), 
-                        offset: const Offset(8, 8),
-                        blurRadius: 0.1,
-                      ),
-                    ]
-                )
+              child: SizedBox(
+                width: 115, // Custom width
+                height: 60, // Custom height
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  },
+                  backgroundColor: Colors.transparent, // Transparent to show the custom container
+                  elevation: 0, // Remove shadow from FloatingActionButton itself
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10), // Adjust padding if needed
+                    decoration: BoxDecoration(
+                      color: Colors.yellowAccent,
+                      borderRadius: BorderRadius.circular(2),
+                      border: Border.all(color: Colors.black, width: 3),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.9),
+                          offset: const Offset(8, 8),
+                          blurRadius: 0.1,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, // Center content
+                      children: [
+                        Icon(
+                          Icons.info_outline, // Your desired icon
+                          color: Colors.black,
+                          
+                        ),
+                        const SizedBox(width: 8), // Space between icon and text
+                        Text(
+                          'About', // Your desired text
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'PressStart2p',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-              )
-            ),
+            )
+
+
           ]
         ),       
       ),
